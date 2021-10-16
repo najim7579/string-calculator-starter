@@ -53,7 +53,13 @@ public class StringCalculatorShould {
         stringCalculator.add("-1");
         stringCalculator.add("-5,10\n-15");
     }
-  
+    @Test
+    public void numbersGreaterThan1000AreIgnored() {
+    	 StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(stringCalculator.add("5,12,1001"), 17);
+        assertEquals(stringCalculator.add("14124,22\n4,1214"), 26);
+    }
+	
 
   
 }
